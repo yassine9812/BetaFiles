@@ -1,0 +1,40 @@
+.container{
+    width: 100%;
+    margin-bottom: 300px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.pos{
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.textpos{
+align-items: center;    
+width: 100%;   
+}
+
+.container img{
+    width: 1170px;
+    height: 629px;
+}
+
+.btn {
+    background-color: #E81A41;
+    padding-left: 50px;
+    padding-right: 49px;
+    border: none;
+    border-radius: 35px;
+    width: 250px;
+    height: 71px;
+    margin-top: 100px;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}

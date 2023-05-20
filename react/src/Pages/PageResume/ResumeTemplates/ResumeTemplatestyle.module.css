@@ -1,0 +1,171 @@
+.resumeSecition{
+  width: 100%;
+  display: flex;
+  align-self: center;
+  height: 770px;
+  height: 800px;
+}
+.hoverbtn{
+width: 150px;
+height: 50px;
+border-radius: 30px;
+position: absolute;
+top: 82%;
+left: 15%;
+display: none;
+background-color: #E81A41;
+border: none;
+color: white;
+}
+
+.resumeSecition:hover  .hoverbtn{
+  display:block;
+  cursor: pointer;
+}
+.resume {
+  width: 100%;
+  height: fit-content;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    height: 800px;
+    margin-left: 50px;
+    position: relative;
+  }
+
+  .resume:hover  {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  .corpimg{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  }
+  
+  .resume h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .resume h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .resume h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .resume h5 {
+    font-size: 12px;
+    margin-bottom: -5px;
+    text-align: left;
+  }
+  
+  .resume p {
+    text-align: left;
+  }
+  .resume span{
+    font-weight: bold;
+
+  }
+  
+
+  
+
+
+  
+
+  .containerLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#0f9fff;
+    padding: 20px;
+    color: white;
+    display: flex;
+    width:150px;
+    height: 760px;
+  }
+  .sectionPersonalInfo{
+    display: inline;
+    width: 100px;
+    
+  }
+  .sectionHeadingPersonalInfo{
+    border-bottom: 2px solid #ffffff;
+    display: flex;
+    justify-self: flex-start;
+  }
+  .sectionPersonalInfo li{
+    justify-self: flex-start;
+    list-style: none;
+    align-items: start;
+  }
+  .contact{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100px;
+  }
+  .sectionEducation{ 
+    width: 150px;
+    display: inline;
+  }
+
+  .sectionHeadingEducation{
+    border-bottom: 2px solid #ffffff;
+    display: flex;
+    justify-self: flex-start;
+  }
+  .sectionEducation li{
+    justify-self: flex-start;
+    list-style: none;
+    align-items: start;
+  }
+
+  .containerRight{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    width:250px;
+  }
+
+  .sectionSummary{
+    display: inline;
+    width: 250px;
+  }
+  .sectionHeadingSummary{
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-self: flex-start;
+    justify-content: left;
+  }
+  .sectionExperience{
+    display: inline;
+    width: 250px;
+    height:250px;
+  }
+  .sectionHeadingExperience{
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-self: flex-start;
+    justify-content: left;
+  }
+.block{
+  display: flex;
+  padding: 2px;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  margin-bottom: -30px;
+}
+.block p{
+  margin-bottom: -10px;
+}

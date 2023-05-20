@@ -1,0 +1,71 @@
+.Container{
+    width: 480px;
+    height: 691px;
+    background-color: white;
+    margin-bottom: 100px;
+    display: flex;
+    justify-items: center;
+}
+.Container h2{
+font-size: 18px;
+}
+
+.ContainerLeft{
+    display: flex ;
+    flex-direction: column;
+    width: 55%;
+    padding-right: 10px;
+    height:100%;
+}
+.resumeHeader{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 10px solid rgb(55,55,55);
+}
+.Name{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+    
+}
+.professionalSummary{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 80%;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+.professionalSummary h2{ 
+    margin-bottom: -3px;
+}
+ 
+
+
+.ContainerRight{
+    width: 40%;
+    background-color: #fff6e9;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.Contact{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 9px;
+    margin-bottom: 5px;
+}
+.education{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+.Skills{
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}

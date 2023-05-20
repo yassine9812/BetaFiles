@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    width: 190vh;
+    height: 800px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    background-color: #00000023;
+    
+}
+.template{
+    width: 50%;
+    
+}

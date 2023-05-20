@@ -1,0 +1,22 @@
+.Container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px;
+}
+.header{
+    display: flex;
+    justify-items: center;
+    padding: 20px;
+    margin-left: 150px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

@@ -1,0 +1,53 @@
+.container{
+    width: 100%;
+    height:auto;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.inputName{
+    align-self:flex-start;
+    width: 270px;
+    height: 60px;
+    background-color: #E3E3E3;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+.inputMail{
+    align-self:flex-start;
+    width:570px ;
+    height: 60px;
+    background-color: #E3E3E3;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+.MessageArea{
+    align-self:flex-start;
+    width:570px ;
+    height: 150px;
+    background-color: #E3E3E3;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-top: 100px;
+}
+.btn {
+    background-color: #E81A41;
+    border: none;
+    border-radius: 35px;
+    width: 150px;
+    height: 61px;
+    color: white;
+    font-size: 20px;
+}

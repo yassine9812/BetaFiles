@@ -1,0 +1,172 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+   
+}
+
+
+
+
+.generateTemplateContainer{
+    display:flex;
+    flex-direction: column;
+    margin-top: 200px;
+    margin-left: 300px;
+    text-align: left;
+} 
+.generateTemplateContainer input{
+    background-color: #E6E6E6;
+    border: none;
+    width: 177px;
+    height: 50px;
+    border-radius: 30px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+.generateTemplateContainer textarea{
+    width: 387px;
+    height: 212px;
+    background-color: #E6E6E6;
+    border: none;
+    border-radius: 30px;
+    padding-left: 35px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+.lonInput{
+    width: 375px;
+}
+.generateTemplateContainer label{
+    margin-left: 20px;
+    font-size: 15px;
+}
+.generateTemplateContainer form{
+    display: flex;
+    flex-direction: column;
+    width: 471px;
+}
+.generateTemplateContainer p{
+    font-size: 12px;
+    text-align: left;
+    margin-top: -10px;
+    color: #a9a7a7;
+}
+.generateTemplateContainer h3{
+    text-align: left;
+}
+.PersonalDetails{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom:30px;
+}
+.InputsField{
+    display: flex;
+    flex-direction: row;
+}
+.boxInput{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-right: 10px;
+}
+
+.Summary{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.Education{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.Employment{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.Skills{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+
+.PreviewTemplateContainer{
+    width: 45%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 650px;
+    margin-top: -1700px;
+    background-color: #E6E6E6;
+    border-radius: 10px;
+    padding: 20px;
+}
+.btnAdd{
+    background-color: none;
+    border: none;
+}
+.InputsList{
+    display: flex;
+    flex-direction: column;
+}
+.btnContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn1{
+    background-color: #E81A41;
+    border: none;
+    color: #E6E6E6;
+    width: 100px;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.btn2{
+    background-color: #262E2E;
+    border: none;
+    color: #E6E6E6;
+    width: 100px;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}

@@ -1,0 +1,111 @@
+.app {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 20px;
+    height: 100vh;
+    margin-left: 200px;
+    width: 100%;
+  }
+
+
+.form{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 500px;
+    justify-content: center;
+    position: relative;
+}
+.form img{
+    position: absolute;
+    top: 20px;
+}
+  .title{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: start;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    text-align: center;
+  }
+  .inputstyle{
+    background-color: #E6E6E6;
+    height: 75px;
+    width: 400px;
+    border: 0px;
+    outline: none;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    transition: 0.1s;
+  }
+  input:focus{
+    border: 2px solid #262E2E;
+    transition: 0.2s;
+  }
+
+  .inputcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  }
+  .labelstyle{
+    font-size: 15px;
+    text-align: start;
+    margin-left: 20px;
+  }
+  .error{
+    color: red;
+    font-size: 12px;
+    text-align: start;
+    margin-top: -50px;
+    margin-left: 20px;
+  }
+
+  .btn {
+    background-color: #E81A41;
+    border: none;
+    border-radius: 35px;
+    width: 150px;
+    height: 71px;
+    margin-top: 80px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.btn2 {
+    background-color: #262E2E;
+    border: none;
+    border-radius: 35px;
+    width: 150px;
+    height: 71px;
+    margin-top: 80px;
+}
+.btn2 a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.buttoncontainer{
+    display: flex;
+    justify-content: space-between;
+}
+.errorstyle{
+  color: red;
+    font-size: 12px;
+    text-align: start;
+    margin-top: -50px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,159 @@
+.containerResume{
+    background-color:white;
+    max-height: 800px;
+    width: auto;
+    font-family: sans-serif;
+    width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 800px;
+    position: relative;
+}
+.containerResume span button{
+width: 150px;
+height: 50px;
+border-radius: 30px;
+position: absolute;
+top: 50%;
+left: 200px;
+display: none;
+background-color: #E81A41;
+border: none;
+color: white;
+}
+.containerResume:hover  span button {
+    display: block;
+    cursor: pointer;
+}
+
+
+
+.containerResume:hover{
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+
+.containerResume h4{
+    color:rgb(95, 25, 217); 
+    font-size: 15px;
+}
+.containerResume span {
+   color:  rgb(141, 141, 141);
+   font-size: 12px;
+}
+.sectionTitle{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.sectionTitle h2{
+    color: rgb(95, 25, 217);
+    margin-bottom: -10px;
+}
+.sectionTitle  h3{
+    color: rgb(141, 141, 141);
+    font-weight: normal;
+}
+.sectionBox{
+    display: flex;
+    margin-right: 10px;
+    padding-right: 5px;
+}
+.Summarybox{
+    border-top: 2px solid rgb(95, 25, 217);
+    border-bottom: 2px solid rgb(95, 25, 217);
+    text-align: left;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.Summarybox p{
+    font-size: 12px;
+    margin-left: 15px;
+}
+.titleSection{
+    justify-self: center;
+}
+.ExperienceBox{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+.Row{
+    display: flex;
+    width: 100%;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.box p{
+font-size: 12px;
+}
+
+
+.contentBox{
+    display: flex;
+    width: 100%;
+}
+.EducationBox{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid rgb(95, 25, 217);
+    border-top: 2px solid rgb(95, 25, 217);
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.col{
+    margin-left: 20px;
+    width: 190px;
+}
+.contentBox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.SkillsBox{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.SkillsBox p{
+margin-left: 50px;
+}
+.ConatactBox{
+    justify-content: center;
+    display: flex;
+    border-top: 2px solid rgb(95, 25, 217);
+    border-bottom: 2px solid rgb(95, 25, 217);
+    text-align: left;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.conatct{
+    display: flex;
+    justify-items: center;
+    width: 200px;
+}
+.conatct p{
+font-size: 12px;
+}
+
+.box1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 13px;
+}

@@ -1,0 +1,70 @@
+.container{
+    width: 550px;
+    display: flex;
+    height: 800px;
+    background-color: white;
+    padding-left:20px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+    position: relative;
+}
+.container:hover{
+    width: 550px;
+    background-color: rgba(0, 0, 0, 0.02);
+} 
+
+.HeaderContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.PersonalInfo{
+    display: flex;
+    flex-direction: column;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    font-size: 30px;
+    font-weight: lighter;
+}
+.Contact{
+    width: 505px;
+    display: flex;
+    border-bottom: 3px solid black;
+    justify-content: center;
+    margin-left: 5px;
+    margin-bottom: 100px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 10px;
+    
+}
+.personalPragraphe{
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    text-align: left;
+    justify-content: center;
+    color: gray;
+}
+.hoverbtn{
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 200px; 
+    background-color: #E81A41;
+    border: none;
+    color: white;
+    display: none;
+    }
+    
+    .container:hover  .hoverbtn{
+      display:block;
+      cursor: pointer;
+    }

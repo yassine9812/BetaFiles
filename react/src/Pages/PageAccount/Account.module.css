@@ -1,0 +1,105 @@
+.container1{
+   display: flex;
+   justify-content: center;
+   margin-right: 200px;
+
+}
+.profilPic{
+    margin-right: 50px;
+}
+.profileName{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: start;
+}
+.btnRow{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn1 {
+    background-color: #262E2E;
+    border: none;
+    border-radius: 35px;
+    width: 250px;
+    height: 61px;
+    color: white;
+    font-size: 18px;
+   
+}
+
+.btn2 {
+    background-color: #E81A41;
+    border: none;
+    border-radius: 35px;
+    width: 250px;
+    height: 61px;
+    color: white;
+    font-size: 18px;
+    margin-left: 200px;
+}
+
+.container2{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+.container2 h2{
+    align-self: self-start;
+    margin-left: 300px;
+    margin-top: 150px;
+}
+.resumeBox{
+    width: 100%;
+    margin-left: 300px;
+    
+}
+
+.addSpace{
+    align-self: flex-start;
+    width: 400px;
+    height: 552px;
+    border: #BFBFBF;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+}
+.posAddIcon{
+    align-self: center;
+}
+.addBtn{
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.container3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container3 h2{
+    align-self: self-start;
+    margin-left: 300px;
+    margin-top: 150px;
+}
+
+.container4{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.container4 h2{
+    align-self: self-start;
+    margin-left: 300px;
+    margin-top: 150px;
+}
+.container4 p{
+    align-self: self-start;
+    margin-left: 300px;
+    color: #B8B8B8;
+}

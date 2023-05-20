@@ -1,0 +1,38 @@
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 300px;
+}
+.rightpos{
+    width: 657px;
+    height: 656px;
+    margin-left: 50px;
+}
+.leftpos h1{
+    font-size: 80px;
+    text-align: start;
+    width:814px;
+    padding-left: 100px;
+}
+.buttonpos{
+display: flex;
+align-items: flex-start;
+margin-top: 100px;
+padding-left: 100px;
+}
+.btn {
+    background-color: #E81A41;
+    padding-left: 50px;
+    padding-right: 49px;
+    border: none;
+    border-radius: 35px;
+    width: 250px;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}

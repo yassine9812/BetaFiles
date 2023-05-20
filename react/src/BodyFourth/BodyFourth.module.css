@@ -1,0 +1,65 @@
+.container{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    margin-top: 1850px;
+    margin-bottom: 300px;
+    background-color: #262E2E;
+    color: white;
+    display: flex;
+}
+
+.leftpos{
+    justify-content: center;
+    padding:50px ;
+    width: 550px;
+    height: 670px;
+}
+
+.leftpos h2{
+    text-align: start;
+    height: 338px;
+    font-size: 40px;
+    padding-top: 50px;
+    
+}
+.leftpos p{
+    margin-top: -100px;
+    text-align: start;
+    width: 500px;
+    font-size: 20px;
+}
+.container button{
+    margin-right: 250px;
+}
+
+.btn {
+    background-color: #262E2E;
+    padding-left: 50px;
+    padding-right: 49px;
+    border:solid 2px white ;
+    border-radius: 35px;
+    width: 280px;
+    height: 71px;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    width:288px;
+}
+.btn:hover {
+    color: black;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+.btn a:hover {
+    color: black;
+}
+
+.rightpos{
+    justify-content: center;
+    padding-top:50px ;
+    width: 550px;
+}
+

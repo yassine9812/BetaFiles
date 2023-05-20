@@ -1,0 +1,91 @@
+.Container{
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+.Header{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    margin-bottom: 250px;
+}
+.Header img {
+
+width: 582px;
+height: 500px;
+margin-top: -80px;
+}
+.textBox{
+    display: flex;
+    flex-direction: column;
+    width: 652px;
+    align-items: start;
+    text-align: left;
+    justify-content: center;
+}
+.textBox2{
+    display: flex;
+    flex-direction: column;
+    width: 652px;
+    align-items: start;
+    text-align: left;
+    justify-content: center;
+    margin-left: 350px;
+}
+.Body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 250px;
+}
+.ContainerBody{
+    display: flex;
+    justify-content: center;
+    
+}
+.ContainerBody img{
+   padding-left: 200px;
+   padding-right: 200px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}
+.box p{
+    margin-left: 200px;
+    width: 570px;
+}
+.ContainerBody2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+.ContainerBody2 img{
+   width: 80%;
+   margin-left: 50px;
+}
+.box2{
+    display: flex;
+    flex-direction: column;
+    align-self:self-start;
+}
+.box2 p{
+    width: 370px;
+    align-self:center;
+    margin-left: 50px;
+}
+.btn{
+    background-color:#E81A41 ;
+    width:250px;
+    padding: 20px;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+

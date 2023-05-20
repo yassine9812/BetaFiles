@@ -1,0 +1,153 @@
+.resumeContainer{
+    width: 500px;
+    display: flex;
+    height: 800px;
+    background-color: white;
+    padding-left:20px ;
+    position: relative;
+    
+}
+.resumeContainer:hover{
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+.resumeContainer p{
+    font-size: 12px;
+    text-align: left;
+}
+.resumeContainer li { 
+text-decoration: none;
+list-style: none;
+}
+.containerRight{
+    display: flex ;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 10px;
+    height:100%;
+}
+.containerName{
+    display: flex;
+    width: 100%;
+    border-bottom: 10px solid rgb(55,55,55);
+    text-align: left;
+}
+.SummaryContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    margin-top: -10px;
+}
+.SummaryContainer h3{ 
+   
+    margin-bottom: -5px;
+}
+.SummaryContaine h3{
+    text-align: left;
+}
+.WorkExperienceContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    width: 100%;
+    height: 80%;
+}
+.WorkExperienceContainer p{
+    font-size: 10px;
+}
+.WorkExperienceContainer ul li{
+    margin-top: -10px;
+    list-style:disc;
+    padding-bottom:2px;
+}
+.WorkExperienceContainer li{
+    margin-bottom: -25px;
+}
+.titleContainer{
+    margin-bottom: -5px;
+    margin-top: -20px;
+}
+.titleContainer h3 {
+margin-bottom: -1px;
+}
+.titleContainer h4 {
+    margin-bottom: -1px;
+    margin-top: 5px;
+    }
+.titleContainer span{
+    font-size: 10px;
+    margin-top: -1px;
+    margin-bottom: 5px;
+}
+.languageContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: -25px;
+}
+.languageContainer ul {
+    margin-top: -5px;
+}
+.containerLeft{
+    width: auto;
+    background-color: #fff6e9;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+
+}
+.contactContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.contactContainer p{
+    text-align: left;
+    margin-bottom: -15px;
+
+}
+.skillsContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.skillsContainer p{
+    text-align: left;
+    margin-bottom: -15px;
+}
+.ProfessionalContainer{
+    display: flex;
+    flex-direction: column;
+}
+.TechnicalContainer{
+    display: flex;
+    flex-direction: column;
+}
+.educationContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 0;
+}
+.hoverbtn{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #E81A41;
+    border: none;
+    color: white;
+    display: none;
+    left: 35%;
+    top: 50%;
+    }
+    
+    .resumeContainer:hover  .hoverbtn{
+      display:block;
+      cursor: pointer;
+    }

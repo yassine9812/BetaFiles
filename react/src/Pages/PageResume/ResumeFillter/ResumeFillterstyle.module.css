@@ -1,0 +1,38 @@
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+.filters{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.filter{
+  margin-right: 50px;
+}
+.filter button{
+background-color: white;
+border: none;
+cursor: pointer;
+padding: 5px;
+border-radius: 10px;
+}
+.filter span{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter button:hover{
+  background-color: rgba(116, 116, 116, 0.103);
+  border: none;
+  cursor: pointer;
+  }
+  .filter button:active{
+    background-color: #E81A41;
+    cursor: pointer;
+    color: white;
+    }

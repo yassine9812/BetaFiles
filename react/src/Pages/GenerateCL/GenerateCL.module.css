@@ -1,0 +1,13 @@
+.PreviewTemplateContainer{
+    width: 55%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 650px;
+    margin-top: -900px;
+    background-color: #E6E6E6;
+    border-radius: 10px;
+    padding: 20px;
+}
