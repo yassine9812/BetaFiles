@@ -5,7 +5,7 @@ import {useNavigate } from 'react-router-dom';
 function TemplateDesign (){
   let navigate = useNavigate();
     return(
-        <sction className={styles.resumeSecition}>
+        <section className={styles.resumeSecition}>
     <div className={styles.resume}>
       
       <div className={styles['containerLeft']} >
@@ -92,7 +92,7 @@ function TemplateDesign (){
       
     </div>
     <div>  <button onClick={  ()=>{navigate("/ResumeBuilder")}  } className={styles.hoverbtn} >  Choose template </button> </div>
-    </sction>
+    </section>
     )
 }
 export default TemplateDesign;
