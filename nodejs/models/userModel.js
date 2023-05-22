@@ -1,36 +1,36 @@
-const crypto = require('crypto');
+const crypto = require('crypto')
 //CRYPTO IS BUILD ON NODE MODULE
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
 
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    trim: true,
+    trim: true
   },
   lastName: {
     type: String,
     // required: true,
-    trim: true,
+    trim: true
   },
   email: {
     type: String,
     required: true,
     unique: true,
     lowercase: true,
-    trim: true,
+    trim: true
   },
   photo: String,
   role: {
     type: String,
     enum: ['user', 'guide', 'leade-guide', 'admin'],
-    default: 'user',
+    default: 'user'
   },
   password: {
     type: String,
     // required: true,
     minlength: 8,
-    select: false,
+    select: false
   },
   passwordConfirm: {
     type: String,
@@ -38,53 +38,57 @@ const userSchema = new mongoose.Schema({
     validate: {
       //THIS ONLY WORK ON CREATING NEW USER
       validator: function (el) {
-        return el === this.password;
+        return el === this.password
       },
-      message: 'Password are not the same',
-    },
+      message: 'Password are not the same'
+    }
   },
   passwordChangedAt: {
-    type: Date,
+    type: Date
   },
   passwordResetToken: String,
   passwordResetExpires: Date,
   active: {
     type: Boolean,
     default: true,
-    select: false,
+    select: false
   },
-});
+  generatedCVs: {
+    type: Array,
+    default: []
+  }
+})
 
 userSchema.pre('save', async function (next) {
   //ONLY RUN THIS FUNCTION WHEN PASSWORD IS MODIFIED
-  if (!this.isModified('password')) return next();
+  if (!this.isModified('password')) return next()
   //HASH THE PASSWORD WITH COST 12
-  this.password = await bcrypt.hash(this.password, 12);
+  this.password = await bcrypt.hash(this.password, 12)
   //DELETE passwordConfirm FIELD
-  this.passwordConfirm = undefined;
-  next();
-});
+  this.passwordConfirm = undefined
+  next()
+})
 
 userSchema.pre('save', function (next) {
-  if (!this.isModified('password') || this.isNew) return next();
+  if (!this.isModified('password') || this.isNew) return next()
   //putting passwordChangedAt 1 second in the past to make sure that the
   // token has created after the apssword has chnaged
-  this.passwordChangetAt = Date.now() - 1000;
-  next();
-});
+  this.passwordChangetAt = Date.now() - 1000
+  next()
+})
 
 userSchema.pre('/^find/', function (next) {
   //THIS POINTS TO CURRENT QUERRY
-  this.find({ active: { $ne: false } });
-  next();
-});
+  this.find({ active: { $ne: false } })
+  next()
+})
 
 userSchema.methods.correctPassword = async function (
   candidatePassword,
   userPassword
 ) {
-  return await bcrypt.compare(candidatePassword, userPassword);
-};
+  return await bcrypt.compare(candidatePassword, userPassword)
+}
 
 userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   if (this.passwordChangedAt) {
@@ -92,31 +96,31 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
     const changedTimestamp = parseInt(
       this.passwordChangedAt.getTime() / 1000,
       10
-    );
-    return JWTTimestamp < changedTimestamp;
+    )
+    return JWTTimestamp < changedTimestamp
   }
   //false means not change
-  return false;
-};
+  return false
+}
 
 userSchema.methods.createPasswordResetToken = function () {
   //32 IS NUMBER OF STRINGS AND CONVERTING IT TO HEXADECIMAL
   //*THIS TOKEN IS WHAT WE GONNA SEND TO USER
   //*RESET PASSWORD THAT USER CAN USE TO CREATE A REAL PASSWORD
-  const resetToken = crypto.randomBytes(32).toString('hex');
+  const resetToken = crypto.randomBytes(32).toString('hex')
   this.PasswordResetToken = crypto
     .createHash('sha256')
     .update(resetToken)
-    .digest('hex');
+    .digest('hex')
 
-  console.log({ resetToken }, this.PasswordResetToken);
+  console.log({ resetToken }, this.PasswordResetToken)
   //10  minutes 60 seconds  1000 milliseconds
-  this.passwordResetExpires = Date.now() + 20 * 60 * 2000;
+  this.passwordResetExpires = Date.now() + 20 * 60 * 2000
 
-  return resetToken;
+  return resetToken
 
   //GENERATE THE RANDOM RESET PASSWORD
-};
+}
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+const User = mongoose.model('User', userSchema)
+module.exports = User

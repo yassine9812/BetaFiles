@@ -1,8 +1,13 @@
-import { React, useEffect, useState } from 'react'
+import { React, useContext, useEffect, useState } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import Preview from './Preview'
 import styles from './GenerateCV.module.css'
 import { PlusCircleOutlined } from '@ant-design/icons'
+import axios from 'axios'
+import { AppContext } from '../../AppContext'
+import { toast } from 'react-hot-toast'
+import { SpinnerCircular } from 'spinners-react';
+import { useNavigate } from 'react-router'
 
 function GenerateCV () {
   const {
@@ -21,14 +26,46 @@ function GenerateCV () {
       skills: [{ value: '' }]
     }
   })
+
+  const [appData, _] = useContext(AppContext)
+
+  const [loading, setLoading] = useState(false)
+
+  const navigate = useNavigate()
+
   const onSubmit = data => {
-    var values = {
-      ...data,
-      education: data.education.map(item => item.value),
-      employmentHistory: data.employmentHistory.map(item => item.value),
-      skills: data.skills.map(item => item.value)
+    setLoading(true)
+    try {
+      var values = {
+        ...data,
+        education: data.education.map(item => item.value),
+        employmentHistory: data.employmentHistory.map(item => item.value),
+        skills: data.skills.map(item => item.value)
+      }
+      console.log(values)
+      axios
+        .post('http://localhost:2000/generateCV', values,{
+          headers: {
+            Authorization: `Bearer ${appData?.token}`
+          }
+        })
+        .then(response => {
+          console.log(response)
+          toast.success('CV generated successfully')
+          navigate('/Account')
+        })
+        .catch(error => {
+          console.log(error)
+          toast.error('Error generating CV')
+          // setErrorMessages(error.response.data.messege)
+        })
+    } catch (error) {
+      console.log(error)
+      toast.error('Error generating CV')
+      // setErrorMessages(error.response.data.messege)
+    } finally{
+      setLoading(false)
     }
-    console.log(values)
   }
   const {
     fields: educationList,
@@ -332,13 +369,14 @@ function GenerateCV () {
                   backgroundColor: '#E81A41',
                   color: 'white',
                   border: 'none',
-                  borderRadius: '99px',
+                  borderRadius: '99px'
                 }}
                 type='button'
                 onClick={handleSubmit(onSubmit)}
               >
-                {' '}
-                Generate & save{' '}
+                {loading ? <div>
+                  <SpinnerCircular color='white' size='24px' />
+                </div> : 'Generate & save'}
               </button>
             </div>
           </div>

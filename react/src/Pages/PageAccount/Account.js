@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Accountstyle from './Account.module.css'
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +8,13 @@ import DropFile from './DropFile'
 import Edit from './Edit.js'
 import { AppContext } from '../../AppContext'
 
+import axios from 'axios'
+import { encrypt } from './../../utils/encryption'
+
+import { Document, Page, pdfjs } from 'react-pdf'
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
+
 function Account () {
   let navigate = useNavigate()
   const [appData, setAppData] = useContext(AppContext)
@@ -16,6 +23,38 @@ function Account () {
     setAppData({})
     localStorage.removeItem('app-data')
     navigate('/Login')
+  }
+
+  useEffect(() => {
+    getCurrentUser()
+  }, [])
+
+  const getCurrentUser = async () => {
+    console.log(appData)
+    await axios
+      .get('http://localhost:2000', {
+        headers: {
+          Authorization: `Bearer ${appData?.token}`
+        }
+      })
+      .then(response => {
+        console.log(response)
+        localStorage.setItem(
+          'app-data',
+          encrypt({
+            ...appData,
+            user: { ...response?.data?.data?.user }
+          })
+        )
+        setAppData({
+          ...appData,
+          user: { ...response?.data?.data?.user }
+        })
+      })
+      .catch(error => {
+        console.log(error)
+        // setErrorMessages(error.response.data.messege)
+      })
   }
 
   return (
@@ -68,19 +107,44 @@ function Account () {
       </div>
       <div className={Accountstyle.container2}>
         <h2>My Resume</h2>
-        <div className={Accountstyle.resumeBox}>
-          <div className={Accountstyle['addSpace']}>
-            <div className={Accountstyle['posAddIcon']}>
-              <button className={Accountstyle['addBtn']}>
-                <Link to='/Resume'>
-                  <PlusCircleOutlined
-                    style={{ fontSize: '50px', color: '#BFBFBF' }}
-                  />
-                </Link>
-              </button>
+        {appData?.user?.generatedCVs?.length > 0 ? (
+          <div className='cvs--grid'>
+            {appData?.user?.generatedCVs?.map(cv => {
+              return (
+                <div
+                  key={cv}
+                  style={{
+                    objectFit: 'contain',
+                    border: '1px solid #BFBFBF'
+                  }}
+                >
+                  <Document
+                    onLoadError={err => console.log(err)}
+                    
+                    file={`http://localhost:2000/cvs/${cv}`}
+                  >
+                    <Page pageNumber={1} renderTextLayer={false} />
+                  </Document>
+                </div>
+              )
+            })}
+          </div>
+        ) : (
+          <div className={Accountstyle.resumeBox}>
+            <div className={Accountstyle['addSpace']}>
+              <div className={Accountstyle['posAddIcon']}>
+                <button className={Accountstyle['addBtn']}>
+                  <Link to='/Resume'>
+                    <PlusCircleOutlined
+                      style={{ fontSize: '50px', color: '#BFBFBF' }}
+                    />
+                  </Link>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
         <div>
           <Edit></Edit>
         </div>

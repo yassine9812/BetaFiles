@@ -1,56 +1,38 @@
-var pdf = require("pdf-creator-node");
-var fs = require("fs");
+var pdf = require('pdf-creator-node')
+var fs = require('fs')
 
-var html = fs.readFileSync("index.html", "utf8");
+var html = fs.readFileSync('./cv-templates/template-1.html', 'utf8')
 
 var options = {
-    format: "A3",
-    orientation: "portrait",
-    border: "10mm",
-    header: {
-        height: "45mm",
-        contents: '<div style="text-align: center;">Author: Shyam Hajare</div>'
-    },
-    footer: {
-        height: "28mm",
-        contents: {
-            first: 'Cover page',
-            2: 'Second page', // Any page number is working. 1-based index
-            default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
-            last: 'Last Page'
-        }
-    }
-};
+  format: 'A4',
+  orientation: 'portrait',
+  border: '10mm',
 
-var users = [
-    {
-      name: "Shyam",
-      age: "26",
-    },
-    {
-      name: "Navjot",
-      age: "26",
-    },
-    {
-      name: "Vitthal",
-      age: "26",
-    },
-  ];
+}
 
-  var document = {
-    html: html,
-    data: {
-      users: users,
-    },
-    path: "./output.pdf",
-    type: "",
-  };
+var form = {
+  firstName: 'Test',
+  lastName: 'User',
+  Mail: 'test@gmail.com',
+  education: ['School', 'College', 'University'],
+  employmentHistory: ['IT Company1', 'IT Company2', 'IT Company3'],
+  skills: ['Java', 'Javascript', 'React', 'NodeJS', 'Blockchain']
+}
 
-  pdf
+var document = {
+  html: html,
+  data: {
+    form: form
+  },
+  path: './template-1.pdf',
+  type: ''
+}
+
+pdf
   .create(document, options)
-  .then((res) => {
-    console.log(res);
+  .then(res => {
+    console.log(res)
   })
-  .catch((error) => {
-    console.error(error);
-  });
+  .catch(error => {
+    console.error(error)
+  })
