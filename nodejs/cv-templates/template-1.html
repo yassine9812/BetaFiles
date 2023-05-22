@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>{{form.firstName}} {{form.lastName }} </title>
+    <style>
+        body {
+            background-color: #fff;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #5d5dff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{form.firstName}} {{form.lastName }}</h1>
+    <h2>{{form.Mail}}</h2>
+
+    <ul>
+        {{#each form.education}}
+        <li>
+            {{this}}
+        </li>
+        <br />
+        {{/each}}
+    </ul>
+    <ul>
+        {{#each form.employmentHistory}}
+        <li>
+            {{this}}
+        </li>
+        <br />
+        {{/each}}
+    </ul>
+    <ul>
+        {{#each form.skills}}
+        <li>
+            {{this}}
+        </li>
+        <br />
+        {{/each}}
+    </ul>
+</body>
+
+</html>

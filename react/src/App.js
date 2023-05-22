@@ -19,6 +19,8 @@ import { decrypt } from './utils/encryption'
 import { AppContext } from './AppContext'
 import { useEffect, useState } from 'react'
 
+import { Toaster } from 'react-hot-toast'
+
 function App () {
   const [appData, setAppData] = useState()
 
@@ -35,6 +37,7 @@ function App () {
 
   return (
     <AppContext.Provider value={[appData, setAppData]}>
+      <Toaster position='top-center' reverseOrder={false} />
       <div className='App'>
         <meta
           name='viewport'
