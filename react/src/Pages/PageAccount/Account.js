@@ -1,92 +1,119 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Accountstyle from "./Account.module.css";
-import {useNavigate } from 'react-router-dom';
-import { UserOutlined,PlusCircleOutlined } from '@ant-design/icons';
-import {Avatar,Space} from "antd"; 
-import DropFile from "./DropFile";
-import Edit from "./Edit.js";
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import Accountstyle from './Account.module.css'
+import { useNavigate } from 'react-router-dom'
+import { UserOutlined, PlusCircleOutlined } from '@ant-design/icons'
+import { Avatar, Space } from 'antd'
+import DropFile from './DropFile'
+import Edit from './Edit.js'
+import { AppContext } from '../../AppContext'
 
+function Account () {
+  let navigate = useNavigate()
+  const [appData, setAppData] = useContext(AppContext)
 
-function Account() {
+  const logout = () => {
+    setAppData({})
+    localStorage.removeItem('app-data')
+    navigate('/Login')
+  }
 
-    let navigate = useNavigate();
-    return(
-        <div>
-            <div className={Accountstyle.container1} >
-                <div className={Accountstyle['profilPic']}>
-                <Space>
-                <Avatar 
-                icon={ <UserOutlined/> }
-                size={200}
-                />
-                </Space>
-                </div>
-                <div>
-
-                
-                <div className={Accountstyle['profileName']}>
-                    <h2>Name</h2>
-                    <h2>Job Title</h2>
-                </div>
-                
-                <div className={Accountstyle['btnRow']}>
-                    <button className={Accountstyle['btn1']} > Share Link </button>
-                    <button onClick={  ()=>{navigate("/PageJob")}  } className={Accountstyle['btn2']} > Browse for a job offer </button>
-                </div>
-                </div>
-
-            </div>
-            <div className={Accountstyle.container2}>
-                <h2>My Resume</h2>
-                <div className={Accountstyle.resumeBox}>
-                <div className={Accountstyle['addSpace']} >
-                 <div className={Accountstyle['posAddIcon']}>
-                    <button className={Accountstyle['addBtn']}><Link to='/Resume'>
-                 <PlusCircleOutlined  
-                style={{ fontSize: '50px', color: '#BFBFBF' }}/>
-                </Link>
-                </button>
-                </div>
-                  
-                
-
-                </div>
-                </div>
-                <div>
-                    <Edit></Edit>
-                </div> 
-            </div>
-            <div className={Accountstyle.container3} >
-            <h2>My Cover Lettre</h2>
-                <div className={Accountstyle.resumeBox}>
-                <div className={Accountstyle['addSpace']} >
-                 <div className={Accountstyle['posAddIcon']}>
-                    <button className={Accountstyle['addBtn']}><Link to='/CoverLettre'>
-                 <PlusCircleOutlined  
-                style={{ fontSize: '50px', color: '#BFBFBF' }}/>
-               
-                </Link>
-                </button>
-                </div>   
-                </div>
-                </div>
-            </div>
-
-            <div className={Accountstyle.container4}>
-                <h2>My Video</h2>
-                <p>make a video to talk about yourself, talk about your skills and goals even about your hobbies.</p>
-                <div>
-                    <DropFile/>
-                </div>
-
-            </div>
+  return (
+    <div>
+      <div className={Accountstyle.container1}>
+        <div className={Accountstyle['profilPic']}>
+          <Space>
+            <Avatar icon={<UserOutlined />} size={200} />
+          </Space>
         </div>
-         
-        )
+        <div>
+          <div className={Accountstyle['profileName']}>
+            <h2>{appData?.user?.firstName + ' ' + appData?.user?.lastName}</h2>
+            <h2>Job Title</h2>
+          </div>
+
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: '20px'
+            }}
+          >
+            <button className={Accountstyle['btn1']}> Share Link </button>
+            <button
+              onClick={() => {
+                navigate('/PageJob')
+              }}
+              className={Accountstyle['btn2']}
+            >
+              {' '}
+              Browse for a job offer{' '}
+            </button>
+            <button
+              style={{
+                backgroundColor: ' #E81A41',
+                border: 'none',
+                borderRadius: '35px',
+                width: '250px',
+                height: '61px',
+                color: 'white',
+                fontSize: '18px'
+              }}
+              onClick={logout}
+            >
+              Log out
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className={Accountstyle.container2}>
+        <h2>My Resume</h2>
+        <div className={Accountstyle.resumeBox}>
+          <div className={Accountstyle['addSpace']}>
+            <div className={Accountstyle['posAddIcon']}>
+              <button className={Accountstyle['addBtn']}>
+                <Link to='/Resume'>
+                  <PlusCircleOutlined
+                    style={{ fontSize: '50px', color: '#BFBFBF' }}
+                  />
+                </Link>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Edit></Edit>
+        </div>
+      </div>
+      <div className={Accountstyle.container3}>
+        <h2>My Cover Lettre</h2>
+        <div className={Accountstyle.resumeBox}>
+          <div className={Accountstyle['addSpace']}>
+            <div className={Accountstyle['posAddIcon']}>
+              <button className={Accountstyle['addBtn']}>
+                <Link to='/CoverLettre'>
+                  <PlusCircleOutlined
+                    style={{ fontSize: '50px', color: '#BFBFBF' }}
+                  />
+                </Link>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={Accountstyle.container4}>
+        <h2>My Video</h2>
+        <p>
+          make a video to talk about yourself, talk about your skills and goals
+          even about your hobbies.
+        </p>
+        <div>
+          <DropFile />
+        </div>
+      </div>
+    </div>
+  )
 }
 
-
-export default Account;
-
-
+export default Account
