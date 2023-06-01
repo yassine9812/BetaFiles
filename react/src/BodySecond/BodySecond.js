@@ -9,13 +9,21 @@ function BodySecond(){
             </div>
        
        <div className={BodySecondcss.rightpos} >
+        <div style={{display:'flex', flexDirection:'column'}} >
             <h2>
-             Signup  Now And Use Our Resume Builder To Create Your Resume Wining Job 
+            Signup  Now  And Find Your Dream Job  
             </h2>
+            <p style={{width:'482px',textAlign:'left',marginTop:'-20px'}} >
+            browse through our job offers and find that job you've always wanted 
+            </p>
+            <div style={{marginTop:'100px',marginLeft:'-300px'}}>
+                <button className={BodySecondcss.btn} > 
+                <Link to="/SignUp">SignUp Now</Link> 
+                </button>
+            </div>
+            </div>
        </div>
-       <button className={BodySecondcss.btn} > 
-       <Link to="/SignUp">SignUp Now</Link> 
-       </button>
+       
        
 
         </div>

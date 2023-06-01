@@ -162,3 +162,42 @@ exports.generateCV = catchAsync(async (req, res, next) => {
       })
     })
 })
+
+
+exports.generateCL = catchAsync(async (req, res, next) => {
+  var html = fs.readFileSync('./cover-letter/template-1.html', 'utf8')
+
+  var options = {
+    format: 'A4',
+    orientation: 'portrait',
+    border: '10mm'
+  }
+
+  var form = req?.body;
+
+  var fileName = `${req?.user?.id}-${Date.now()}.pdf`;
+
+  var document = {
+    html: html,
+    data: {
+      form: form
+    },
+    path: process.cwd() + `/public/generated-cover-letter/${fileName}`
+  }
+
+  pdf
+    .create(document, options)
+    .then(async _ => {
+      await User.findByIdAndUpdate(req?.user?.id, { $push: { generatedCLs: fileName } })
+      res.status(200).json({
+        status: 'success',
+        message: 'cover letter generated successfully'
+      })
+    })
+    .catch(error => {
+      res.status(error?.statusCode || 500).json({
+        status: 'error',
+        message: error?.message || 'something went wrong'
+      })
+    })
+})

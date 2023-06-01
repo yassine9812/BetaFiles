@@ -42,7 +42,7 @@ const Preview = ({watch}) => {
           <div style={{marginLeft:'20px',marginTop:'20px'}}>
               <p style={{fontSize:'10px',marginTop:'-5px',color:'black'}} >
                With best regards,
-               <h2 style={{fontSize:'12px',marginTop:'5px' }} > Avery Davis </h2>
+               <h2 style={{fontSize:'12px',marginTop:'5px' }} > {watch("firstName")} {watch("lastName")} </h2>
               </p>
                </div>
           </div>

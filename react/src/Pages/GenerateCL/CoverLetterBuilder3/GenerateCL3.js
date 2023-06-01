@@ -1,14 +1,74 @@
-import {React} from "react";
+import { React, useContext, useEffect, useState } from 'react'
 import { useForm } from "react-hook-form";
 import PreviewCL3 from "./PreviewCL3.js";
 import Styles from "../GenerateCL.module.css";
 import styles from "../../GenerateCV/GenerateCV.module.css";
+import axios from 'axios'
+import { AppContext } from '../../../AppContext'
+import { toast } from 'react-hot-toast'
+import { SpinnerCircular } from 'spinners-react';
+import { useNavigate } from 'react-router'
 
 
 function GenerateCL3() {
     
-  const { register, handleSubmit, watch, formState: { errors, } } = useForm();
-  const onSubmit = data => console.log(data);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    control,
+    formState: { errors }
+  } = useForm({
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      Mail: '',
+      Phone: '',
+      Address: '',
+      HiringManagerName:'',
+      JobTitle:'',
+      Site:'',
+      Summary:'',
+
+    }
+  })
+
+  const [appData, _] = useContext(AppContext)
+
+  const [loading, setLoading] = useState(false)
+
+  const navigate = useNavigate()
+
+  const onSubmit = data => {
+    setLoading(true)
+    try {
+      var values = {
+        ...data,}
+        console.log(values)
+      axios
+        .post('http://localhost:2000/generateCL',values,{
+          headers: {
+            Authorization: `Bearer ${appData?.token}`
+          }
+        })
+        .then(response => {
+          console.log(response)
+          toast.success('CL generated successfully')
+          navigate('/Account')
+        })
+        .catch(error => {
+          console.log(error)
+          toast.error('Error generating CL')
+          // setErrorMessages(error.response.data.messege)
+        })
+    } catch (error) {
+      console.log(error)
+      toast.error('Error generating CL')
+      // setErrorMessages(error.response.data.messege)
+    } finally{
+      setLoading(false)
+    }
+  }
   
 
   return <>
@@ -120,8 +180,22 @@ function GenerateCL3() {
     <div className={Styles.PreviewTemplateContainer}>
     <PreviewCL3 watch={watch} />
     <div className={styles.btnContainer}>
-        <button className={styles.btn1}  type="submit" > Save </button>
-        <button className={styles.btn2} type="submit" > Download </button>
+    <button
+                style={{
+                  width: '200px',
+                  height: '50px',
+                  backgroundColor: '#E81A41',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '99px'
+                }}
+                type='button'
+                onClick={handleSubmit(onSubmit)}
+              >
+                {loading ? <div>
+                  <SpinnerCircular color='white' size='24px' />
+                </div> : 'Generate & save'}
+              </button>
     </div>
     </div>
     

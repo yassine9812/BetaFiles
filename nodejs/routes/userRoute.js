@@ -35,5 +35,6 @@ router
   .delete(userController.deleteUser)
 
 router.route('/generateCV').post( autController.protect,userController.generateCV)
+router.route('/generateCL').post( autController.protect,userController.generateCL)
 
 module.exports = router

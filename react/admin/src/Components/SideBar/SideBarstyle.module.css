@@ -1,0 +1,7 @@
+.sidebar ul {
+padding: 0px;
+}
+.sidebar ul li:hover {
+    background-color: white;
+    color: black;
+}

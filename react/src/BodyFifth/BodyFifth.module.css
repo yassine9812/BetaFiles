@@ -4,34 +4,29 @@
     position: relative;
     display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 .pos{
-    width: auto;
+    width: 758px;
     font-size: 50px;
     text-align: center;
     margin-bottom: 50px;
+    text-align: left;
 }
-.imagetail{
-    justify-content: center;
-    width: 100%;
-    
-}
+
 .imagetail img{
     width: 100%;
   max-width: 400px;
   height: auto;
 }
-.posbtn.posbtn{
-    width: auto;
-    margin-top: -100px;
-}
+
 .btn {
     background-color: #E81A41;
     border: none;
     border-radius: 35px;
     width: 250px;
     height: 71px;
+    margin-left: -550px;
+    margin-top: 50px;
 }
 .btn a{
     color: white;

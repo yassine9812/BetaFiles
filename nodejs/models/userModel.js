@@ -56,6 +56,10 @@ const userSchema = new mongoose.Schema({
   generatedCVs: {
     type: Array,
     default: []
+  },
+  generatedCLs: {
+    type: Array,
+    default: []
   }
 })
 

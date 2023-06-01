@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 500px;
-    background-color: #262E2E;
+    background-color: #E81A41;
     color: white;
     position: relative;
 }
@@ -20,24 +20,23 @@
 .rightpos{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .rightpos h2{
     width: 560px;
-    height: 338px;
+    height: 131px;
     font-size: 40px;
     padding-top: 100px;
+    text-align: left;
 }
 .btn {
     background-color: #262E2E;
     padding-left: 50px;
     padding-right: 49px;
-    border:solid 2px white ;
+    border:none;
     border-radius: 35px;
     width: 250px;
-    height: 71px;
-    margin-top: 450px;
-    margin-left: -250px;
-   
+    height: 71px;      
 }
 .btn a{
     color: white;

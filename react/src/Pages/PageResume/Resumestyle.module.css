@@ -25,3 +25,17 @@
     margin-top: 150px;
     margin-left: 150px;
 }
+.sectionBox{
+    display: flex;
+    background-color: #E81A41;
+    color: white;
+    margin-bottom: 300px;
+    margin-top: 300px;
+}
+.blog{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 150px;
+}

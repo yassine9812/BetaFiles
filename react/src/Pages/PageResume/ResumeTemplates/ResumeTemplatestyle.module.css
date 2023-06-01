@@ -4,13 +4,14 @@
   align-self: center;
   height: 770px;
   height: 800px;
+  margin-right: 20px;
 }
 .hoverbtn{
 width: 150px;
 height: 50px;
 border-radius: 30px;
 position: absolute;
-top: 82%;
+top:1220px;
 left: 15%;
 display: none;
 background-color: #E81A41;
@@ -34,6 +35,7 @@ color: white;
     height: 800px;
     margin-left: 50px;
     position: relative;
+    margin-right: 50px;
   }
 
   .resume:hover  {

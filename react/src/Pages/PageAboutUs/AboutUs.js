@@ -3,8 +3,8 @@ import styles from "../PageAboutUs/AboutUs.module.css";
 import {useNavigate } from 'react-router-dom';
 import Footer from "../../Footer/Footer.js";
 import firstImg from "../PageAboutUs/Group1640.png";
-import secondImg from "../PageAboutUs/2001.i402.026.png";
-import thirdImg from "../PageAboutUs/2796607.png";
+import secondImg from "./Character-holding-tablet-pointing-pie-chart 1.png";
+import thirdImg from "./5264881.png";
 import fourthImg from "../PageAboutUs/8778112.png";
 import fifthImg from "../PageAboutUs/Component 6-27.png";
 import sixthImg from "../PageAboutUs/Component 6-28.png";
@@ -33,20 +33,21 @@ function AboutUs() {
                 <div className={styles.ContainerBody}>
                     <div className={styles.box} >
                         <img src={secondImg} alt="" ></img>
-                        <p   > Help user to creat a professional 
+                        <p style={{width:'491px', height:'135px', textAlign:'left', marginTop:'200px', fontSize:'20px' }}  > Help user to creat a professional 
                             and a unique resume and cover 
                             letter</p>
                     </div>
                     <div className={styles.box}>
-                        <img style={{width:'570px', height:'500px'}} src={thirdImg} alt=""  ></img>
-                        <p   >Organize all your resume and cover letters in one account, 
+                    <p style={{width:'491px', height:'135px', textAlign:'left', marginTop:'200px', fontSize:'20px' }}  >Organize all your resume and cover letters in one account, 
                             you can shar it to LinkedIn or send it directly to the company that you apply for </p>
+                        <img style={{width:'570px', height:'500px'}} src={thirdImg} alt=""  ></img>
+                        
                     </div>
                 </div>
             </div>
 
-            <div className={styles.Body} >
-                <div className={styles.ContainerBody} >
+            <div className={styles.Body1} >
+                <div className={styles.ContainerBody1} >
                 <div className={styles.textBox2}>
                     <h2>Team</h2>
                     <p> Our team is made up of professional writers across Tunisia 
@@ -80,8 +81,8 @@ function AboutUs() {
 
 
             <div className={styles.Body} >
-                <div className={styles.ContainerBody} >
-                <img style={{marginLeft:'-150px', width:'600px'  }} src={finalImg} alt="" ></img>
+                <div className={styles.ContainerBody1} >
+                <img style={{marginLeft:'150px',marginRight:'50px', width:'600px'  }} src={finalImg} alt="" ></img>
                     <div className={styles.textBox} >
                 <h2 style={{fontSize:'40px'}}>Don't miss much time 
                     and sign up now to take 

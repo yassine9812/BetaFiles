@@ -1,6 +1,7 @@
 import React from "react";
 import {Link } from 'react-router-dom';
 import Headercss  from './Header.module.css';
+import pic from './Intersection 1.png'
 function Header (){
     return(
         <div className={Headercss.container}>
@@ -12,7 +13,7 @@ function Header (){
             
             </div>
             <div className={Headercss.rightpos}>
-                <img src="image/illustration 1.png" alt="illustartion1" ></img>
+                <img src={pic} style={{width:'1200px'}} alt="illustartion1" ></img>
             </div>
         </div>
     )

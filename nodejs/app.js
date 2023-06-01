@@ -21,6 +21,7 @@ app.use(express.json())
 
 app.use('/public', express.static(path.join(__dirname, 'public')))
 app.use('/cvs', express.static(path.join(__dirname, 'public/generated-cvs')))
+app.use('/cls', express.static(path.join(__dirname, 'public/generated-cover-letter')))
 
 app.use('/', userRoute)
 app.use('/', infoCvRouter)

@@ -1,0 +1,47 @@
+.Container{
+    display: flex;
+    justify-self:center;
+    width: 100%;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 350px;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 50px;
+}
+
+.DescriptionBox{
+    width: 100%;
+}
+.bootomContainer{
+    display: flex;
+    flex-direction: row;
+}
+.ExperienceBox{
+    margin-left: 50px;
+}
+
+.duration{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+.duration span{
+    margin-right: 15px;
+}
+.box{
+    display: flex;
+    margin-left: 20px;
+}
+
+.btn{
+    width: 150px;
+    background-color: #E81A41;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    margin-left: 250px;
+    margin-top: 20px;
+}

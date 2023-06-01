@@ -1,28 +1,36 @@
-import React, { useContext, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom' // import useLocation
 import Accountstyle from './Account.module.css'
 import { useNavigate } from 'react-router-dom'
-import { UserOutlined, PlusCircleOutlined } from '@ant-design/icons'
+import { UserOutlined, PlusCircleOutlined,LogoutOutlined } from '@ant-design/icons'
 import { Avatar, Space } from 'antd'
 import DropFile from './DropFile'
 import Edit from './Edit.js'
 import { AppContext } from '../../AppContext'
-
 import axios from 'axios'
 import { encrypt } from './../../utils/encryption'
-
 import { Document, Page, pdfjs } from 'react-pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
-function Account () {
+function Account() {
   let navigate = useNavigate()
   const [appData, setAppData] = useContext(AppContext)
+  const inputRef = useRef(null)
+  const location = useLocation() // use useLocation here
 
   const logout = () => {
     setAppData({})
     localStorage.removeItem('app-data')
     navigate('/Login')
+  }
+
+  const handleShareLinkClick = () => {
+    const profileLink = `${location.origin}/profile/${appData?.user?.id}` // use location.origin
+    inputRef.current.value = profileLink
+    inputRef.current.select()
+    document.execCommand('copy')
+    alert('Profile link copied to clipboard!')
   }
 
   useEffect(() => {
@@ -67,8 +75,9 @@ function Account () {
         </div>
         <div>
           <div className={Accountstyle['profileName']}>
-            <h2>{appData?.user?.firstName + ' ' + appData?.user?.lastName}</h2>
-            <h2>Job Title</h2>
+            <h2>
+              {appData?.user?.firstName + ' ' + appData?.user?.lastName}
+            </h2>
           </div>
 
           <div
@@ -78,7 +87,13 @@ function Account () {
               gap: '20px'
             }}
           >
-            <button className={Accountstyle['btn1']}> Share Link </button>
+            <button
+              className={Accountstyle['btn1']}
+              onClick={handleShareLinkClick}
+            >
+              {' '}
+              Share Link{' '}
+            </button>
             <button
               onClick={() => {
                 navigate('/PageJob')
@@ -93,19 +108,30 @@ function Account () {
                 backgroundColor: ' #E81A41',
                 border: 'none',
                 borderRadius: '35px',
-                width: '250px',
-                height: '61px',
+                width: '150px',
+                height: '50px',
                 color: 'white',
-                fontSize: '18px'
+                fontSize: '15px',
+                marginLeft:'300px',
+                cursor:'pointer'
               }}
               onClick={logout}
             >
-              Log out
+              <span> <LogoutOutlined /> Log Out </span>
+              
             </button>
           </div>
         </div>
       </div>
-      <div className={Accountstyle.container2}>
+
+      {/* add this input below the button */}
+      <input
+        type="text"
+        style={{ position: 'absolute', left: '-9999px' }}
+        ref={inputRef}
+      />
+
+<div className={Accountstyle.container2}>
         <h2>My Resume</h2>
         {appData?.user?.generatedCVs?.length > 0 ? (
           <div className='cvs--grid'>
@@ -177,6 +203,7 @@ function Account () {
         </div>
       </div>
     </div>
+  
   )
 }
 

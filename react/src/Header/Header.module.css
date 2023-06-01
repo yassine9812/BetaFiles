@@ -5,11 +5,22 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 300px;
+    background-color: #3e3e3e24;
+    
 }
 .rightpos{
-    width: 657px;
-    height: 656px;
-    margin-left: 50px;
+    width:40%;
+    height: 700px;
+    margin-left: -150px;
+    margin-bottom: 200px;
+    
+}
+.leftpos{
+    margin-left: -150px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
 }
 .leftpos h1{
     font-size: 80px;
