@@ -1,4 +1,5 @@
-import { React, useContext, useEffect, useState } from 'react'
+import { React, useContext,  useState } from 'react'
+import { useEffect } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import Preview from './Preview'
 import styles from './GenerateCV.module.css'
@@ -23,11 +24,12 @@ function GenerateCV () {
       Mail: '',
       education: [{ value: '' }],
       employmentHistory: [{ value: '' }],
-      skills: [{ value: '' }]
+      skills: [{ value: '' }],
+      language:[{value:''}]
     }
   })
 
-  const [appData, _] = useContext(AppContext)
+  const [appData,_] = useContext(AppContext)
 
   const [loading, setLoading] = useState(false)
 
@@ -38,9 +40,10 @@ function GenerateCV () {
     try {
       var values = {
         ...data,
-        education: data.education.map(item => item.value),
-        employmentHistory: data.employmentHistory.map(item => item.value),
-        skills: data.skills.map(item => item.value)
+        education: data.education.map( item => item.value ),
+        employmentHistory: data.employmentHistory.map( item => item.value ),
+        skills: data.skills.map( item => item.value ),
+        language: data.skills.map(item => item.value )
       }
       console.log(values)
       axios
@@ -90,6 +93,14 @@ function GenerateCV () {
   } = useFieldArray({
     control,
     name: 'skills'
+  })
+  const {
+    fields: languageList,
+    append: appendLanguageList,
+    remove: removeLanguageList
+  } = useFieldArray({
+    control,
+    name: 'language'
   })
 
   return (
@@ -358,6 +369,63 @@ function GenerateCV () {
               </button>
               <div>{errors.skills && <span>This field is required</span>}</div>
             </div>
+
+            <div className={styles.Skills}>
+              <h3>language</h3>
+              <p>
+                Choose the most important skills to show your talents ! (Make
+                sure they match the keywords of the job listing if applying via
+                an online system).
+              </p>
+              {languageList.map((field, index) => (
+                <div className={styles.boxInput}>
+                  <div className={styles.InputsList} key={field.id}>
+                    <input
+                      {...register(`language.${index}.value`)}
+                      style={{ width: '375px' }}
+                      type='text'
+                    />
+                  </div>
+
+                  <div>
+                    {languageList.length > 1 && (
+                      <button
+                        type='button'
+                        style={{
+                          backgroundColor: 'red',
+                          border: 'none',
+                          cursor: 'pointer',
+                          color: 'white',
+                          width: '80px',
+                          height: '30px',
+                          borderRadius: '15px',
+                          marginBottom: '5px'
+                        }}
+                        onClick={() => removeLanguageList(index)}
+                      >
+                        <span>Remove</span>
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+              <button
+                type='button'
+                style={{
+                  backgroundColor: 'white',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+                onClick={() => appendLanguageList({ value: '' })}
+              >
+                <PlusCircleOutlined
+                  style={{ fontSize: '20px', color: '#E81A41' }}
+                />
+                <span>Add Input</span>
+              </button>
+              <div>{errors.skills && <span>This field is required</span>}</div>
+            </div>
+
           </form>
           <div className={styles.PreviewTemplateContainer}>
             <Preview watch={watch} />

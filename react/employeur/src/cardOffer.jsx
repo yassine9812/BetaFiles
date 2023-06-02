@@ -9,6 +9,12 @@ const JobOffer = (props) => {
   const [dateF, setDateF] = useState(props.dateF);
   const [salair, setSalair] = useState(props.salair);
   const [contactMail, setContactMail] = useState(props.ContactMail);
+  const [isDeleted, setIsDeleted] = useState(false);
+
+const handleDelete = () => {
+  setIsDeleted(true);
+}
+  
 
   const handleModifyClick = () => {
     const newJobTitle = prompt('Enter new job title:');
@@ -48,6 +54,7 @@ const JobOffer = (props) => {
   };
 
   return (
+    !isDeleted &&
     <div className='Container'>
       <div>
         <h3>{jobTitle}</h3>
@@ -74,6 +81,9 @@ const JobOffer = (props) => {
         <div>
           <button className='btn' onClick={handleModifyClick}>
             Modifier
+          </button>
+          <button className='btn' onClick={handleDelete}>
+            Delete
           </button>
         </div>
       </div>

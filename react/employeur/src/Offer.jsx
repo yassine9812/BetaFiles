@@ -70,34 +70,48 @@ function Offer() {
           ContactMail={jobOffer.ContactMail}
         />
       ))}
+      <div className='container2' >
+      
       <form>
-        <h3>Add a new job offer:</h3>
-        <label>Job Title:</label>
-        <input
-          type="text"
-          value={newOfferForm.JobTitle}
-          onChange={(e) =>
-            setNewOfferForm({
-              ...newOfferForm,
-              JobTitle: e.target.value,
-            })
-          }
-        />
+      <h3>Add a new job offer:</h3>
+      <div className='inputsFiled' >
+
+      
+            <div className='inputsRow' >
+              <div className='input' >
+                <label >Job Title</label>
+                <input
+                  type="text"
+                  value={newOfferForm.JobTitle}
+                  onChange={(e) =>
+                    setNewOfferForm({
+                      ...newOfferForm,
+                      JobTitle: e.target.value,
+                    })
+                  }
+                />
+              </div>
+              <br />
+              <div className='input' >
+                <label  >Company Name</label>
+                <input
+                  type="text"
+                  value={newOfferForm.nomEntreprise}
+                  onChange={(e) =>
+                    setNewOfferForm({
+                      ...newOfferForm,
+                      nomEntreprise: e.target.value,
+                    })
+                  }
+                />
+              </div>
+            </div>
+
+        
         <br />
-        <label>Company Name:</label>
-        <input
-          type="text"
-          value={newOfferForm.nomEntreprise}
-          onChange={(e) =>
-            setNewOfferForm({
-              ...newOfferForm,
-              nomEntreprise: e.target.value,
-            })
-          }
-        />
-        <br />
-        <label>Description:</label>
-        <input
+        <div className='input' >
+        <label>Description</label>
+        <input style={{width:'125%'}}
           type="text"
           value={newOfferForm.Description}
           onChange={(e) =>
@@ -107,8 +121,15 @@ function Offer() {
             })
           }
         />
+        </div>
+
+        
+
         <br />
-        <label>Start Date:</label>
+        </div>
+        <div className='inputsRow'>
+        <div className='input' >
+        <label>Start Date</label>
         <input
           type="text"
           value={newOfferForm.dateD}
@@ -119,8 +140,12 @@ function Offer() {
             })
           }
         />
+        </div>
+        
+       
         <br />
-        <label>End Date:</label>
+        <div className='input' >
+        <label>End Date</label>
         <input
           type="text"
           value={newOfferForm.dateF}
@@ -131,9 +156,11 @@ function Offer() {
             })
           }
         />
+        </div>
+        </div>
         <br />
-        <label>Salary:</label>
-        <input
+        <label>Salary</label>
+        <input style={{width:'100%'}}
           type="text"
           value={newOfferForm.salair}
           onChange={(e) =>
@@ -145,7 +172,7 @@ function Offer() {
         />
         <br />
         <label>Contact Email:</label>
-        <input
+        <input style={{width:'100%'}}
           type="text"
           value={newOfferForm.ContactMail}
           onChange={(e) =>
@@ -156,10 +183,11 @@ function Offer() {
           }
         />
         <br />
-        <button type="button" onClick={handleAddOffer}>
+        <button className='btn2' type="button" onClick={handleAddOffer}>
           Add Job Offer
         </button>
       </form>
+      </div>
     </div>
   );
 }
