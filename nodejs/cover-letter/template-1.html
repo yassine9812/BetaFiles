@@ -82,18 +82,18 @@
         <div class=HeaderContainer >
         <div class="Contact" >
                     <h3 style="margin-right: 20px;" >CONTACT</h3>
-                <div class="info" >  <p  >123-456-7890</p> <PhoneFilled   /></div>
-                <div class="info">  <p  >hello@reallygreatsite.com</p> <MailFilled  /></div>
-                <div class="info">  <p  >www.reallygreatsite.com</p> <GlobalOutlined  /></div>
+                <div class="info" >  <p  >{{form.Phone}}</p> <PhoneFilled   /></div>
+                <div class="info">  <p  >{{form.Mail}}</p> <MailFilled  /></div>
+                <div class="info">  <p  >{{form.Site}}</p> <GlobalOutlined  /></div>
             </div>
             <div className="PersonalInfo" > 
-                <h2> Avery Davis </h2>
-                <!-- <h2> {{form.firstName}} </h2> -->
-                <h3 >  Marketing coordinator </h3>
+                <!-- <h2> Avery Davis </h2> -->
+                <h2> {{form.firstName}}  {{form.lastName}}</h2>
+                <h3 >  {{form.JobTitle}} </h3>
                 <div class="PersonalInfo" >
-                <h3  > <span  > TO <br/> </span> AARON LOEB</h3>
+                <h3  > <span  > TO <br/> </span> {{form.HiringManagerName}}</h3>
                 <p  ><span  >Rimberio Inc<br/></span>
-                 123 Anywhere St.,Any City </p>
+                    {{form.Adresse}} </p>
                 </div>
 
             </div>
@@ -102,24 +102,13 @@
 
         <div class="personalPragraphe">
             <h3>TO WHOM IT MAY CONCERN</h3>
-            <p  >
-                A cover letter is a three- ar four-paragraph document to an employer explaining your interest in a specific job. It's a one-page letter that is usually attached to your resume. This letter should also highlight your fitness for the advertised role.
-                Writing a cover letter as a mid-career professional is a bit different But first, start with how you found out about the career opening and why ycu l re interested in the job position. Be specific: use the correct names and titles.
-                As you write this letter, use clear and readable words. You want to come across as professional and approachable, but not overly formal.
-                Next, provide examples of why you're the right person for thejob.
-                <ul>
-                    <li> 	Don't hesitate to use bullet points and include numbers that showcase Your achievements.</li>
-                    <li> 	Rather than simply describe what you've done in previous jobs, show the recruiter or hlrlng manager what you can bring to the role.</li>
-                    <li>Express your passion and excitement ta be part of the company and the team.</li>
-                </ul>
-                Finally, provide your contact information and how you prefer to be reached. Offer to meet with the reader at their earliest convenience. Thank them for their time and attention, and let them know that you look forward ta hearing from them soon.
-                Before you send your cover letter, read your duR out loud to quickly spot errors and wordy sentences. You can also ask afriend to review your cover letter. Good luck on yourjab search.
-                
+            <p>
+                {{form.Summary}}  
             </p>
             <div>
                 <p  >
                 With best regards,
-                <h2  > Avery Davis </h2>
+                <h2  > {{form.firstName}}  {{form.lastName}} </h2>
                 </p>
             </div>
         </div>
