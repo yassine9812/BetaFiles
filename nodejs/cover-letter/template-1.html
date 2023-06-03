@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,112 +8,105 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .container{
-    margin-left: 10px;
-    width: 550px;
-    display: flex;
-    height: 800px;
-    background-color: white;
-    padding-left:20px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-    position: relative;
-}
-.container:hover{
-    width: 550px;
-    background-color: rgba(0, 0, 0, 0.02);
-}
-.HeaderContainer{
-    width: 50%;
-    display: flex;
-}
-.Contact{
-    margin-left: -50px;
-    display: flex; 
-    flex-direction: column;
-    text-align: right;
-    justify-content: end;
-    margin-right: 30px;
-    border-right: 3px solid black;
+.container {
+  margin-left: 10px;
+  width: 595px;
+  height: 842px;
+  background-color: white;
+  padding-left: 20px;
 }
 
-.info{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    margin-left: 50px;
-    margin-right: 20px;
+.HeaderContainer {
+  display: flex;
+  position: relative;
+  width: 100%;
 }
-.PersonalInfo{
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    
+
+.Contact {
+  margin-left: -50px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: end;
+  margin-right: 30px;
+  border-right: 3px solid black;
+  width: 50%;
 }
-.personalPragraphe{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: start;
-   
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-left: 50px;
+  margin-right: 20px;
 }
-.hoverbtn{
-    width: 150px;
-    height: 50px;
-    border-radius: 30px;
+
+.PersonalInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: absolute;
+  left: 300px;
+  top: -20px;
+}
+/* .PersonalInfo h2 h3{
     position: absolute;
-    top: 50%;
-    left: 200px; 
-    background-color: #E81A41;
-    border: none;
-    color: white;
-    display: none;
-    }
-    
-    .container:hover  .hoverbtn{
-      display:block;
-      cursor: pointer;
-    }
+    left: 500px;
+} */
+
+.personalPragraphe {
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
     </style>
 </head>
+
 <body>
-    <div class="container" >
-        <div class=HeaderContainer >
-        <div class="Contact" >
-                    <h3 style="margin-right: 20px;" >CONTACT</h3>
-                <div class="info" >  <p  >{{form.Phone}}</p> <PhoneFilled   /></div>
-                <div class="info">  <p  >{{form.Mail}}</p> <MailFilled  /></div>
-                <div class="info">  <p  >{{form.Site}}</p> <GlobalOutlined  /></div>
+    <div class="container">
+        <div class=HeaderContainer>
+            <div class="Contact">
+                <h3 style="margin-right: 20px;">CONTACT</h3>
+                <div class="info">
+                    <p>{{form.Phone}}</p>
+                    <PhoneFilled />
+                </div>
+                <div class="info">
+                    <p>{{form.Mail}}</p>
+                    <MailFilled />
+                </div>
+                <div class="info">
+                    <p>{{form.Site}}</p>
+                    <GlobalOutlined />
+                </div>
             </div>
-            <div className="PersonalInfo" > 
-                <!-- <h2> Avery Davis </h2> -->
-                <h2> {{form.firstName}}  {{form.lastName}}</h2>
-                <h3 >  {{form.JobTitle}} </h3>
-                <div class="PersonalInfo" >
-                <h3  > <span  > TO <br/> </span> {{form.HiringManagerName}}</h3>
-                <p  ><span  >Rimberio Inc<br/></span>
-                    {{form.Adresse}} </p>
+            <div class="PersonalInfo">
+                <h2> {{form.firstName}} {{form.lastName}}</h2>
+                <h3> {{form.JobTitle}} </h3>
+                <div>
+                    <h3> <span> TO <br /> </span> {{form.HiringManagerName}}</h3>
+                    <p>{{form.Adresse}} </p>
                 </div>
 
             </div>
-            
+
         </div>
 
         <div class="personalPragraphe">
             <h3>TO WHOM IT MAY CONCERN</h3>
             <p>
-                {{form.Summary}}  
+                {{form.Summary}}
             </p>
             <div>
-                <p  >
-                With best regards,
-                <h2  > {{form.firstName}}  {{form.lastName}} </h2>
+                <p>
+                    With best regards,
+                <h2> {{form.firstName}} {{form.lastName}} </h2>
                 </p>
             </div>
         </div>
-        
-</div>
+
+    </div>
 </body>
+
 </html>

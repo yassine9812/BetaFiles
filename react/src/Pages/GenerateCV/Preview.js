@@ -44,7 +44,21 @@ const Preview = ({ watch }) => {
               })}
             </ul>
           </div>
+
+
         </div>
+         <div className={Styles.professionalSummary} >
+           <h2> language </h2>
+           <div style={{ fontSize: '15px', textAlign: 'left' }} >
+            <ul>
+              {watch('language').map((item, index) => {
+                return <li key= {index}> {item.value} </li>
+              } )}
+            </ul>
+           </div>
+           </div>     
+
+
       </div>
       <div className={Styles.ContainerRight}>
         <div className={Styles.Contact}>

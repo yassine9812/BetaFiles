@@ -43,7 +43,7 @@ function GenerateCV () {
         education: data.education.map( item => item.value ),
         employmentHistory: data.employmentHistory.map( item => item.value ),
         skills: data.skills.map( item => item.value ),
-        language: data.skills.map(item => item.value )
+        language: data.language.map(item => item.value )
       }
       console.log(values)
       axios

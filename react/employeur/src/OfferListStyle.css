@@ -1,32 +1,71 @@
 .container{
-    width: 100%; 
-    height: 80vh;
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
-    padding: 5px;
-    text-align: left;
+  width: 100%; 
+  height: 200vh;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  padding: 5px;
+  text-align: left;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
-  }
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+tbody  span:hover {
+  background-color: rgba(0, 0, 0, 0.214);
+  border-radius: 5px;
+  padding: 1px;
+  cursor: pointer;
+}
+.container2{
+display: flex;
+justify-content: center;
+width: 100%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.inputsFiled{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.inputsRow{
+  display: flex;
+  flex-direction: row;
   
-  th, td {
-    text-align: left;
-    padding: 8px;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  tbody  span:hover {
-    background-color: rgba(0, 0, 0, 0.214);
-    border-radius: 5px;
-    padding: 1px;
-    cursor: pointer;
-  }
+}
+.input{
+  display: flex;
+  flex-direction: column;
+  margin-right: 130px;
+}
+input{
+  border-radius: 15px;
+  border: none;
+  height: 50px;
+  background-color: #E6E6E6;
+}
+.btn2{
+  background-color: #E81A41;
+  border: none;
+  border-radius: 20px;
+  width: 30%;
+  color: white;
+  height: 50px;
+}

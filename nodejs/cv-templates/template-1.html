@@ -1,174 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <style>
- .resumeContainer{
-    width: 100%;
-    display: flex;
-    height:auto;
-    background-color: white;
-    padding-left:20px ;
-    position: relative;
-    
-}
+        .resumeContainer {
+            width: 100%;
+            display: flex;
+            height: 100%;
+            background-color: white;
+            padding-left: 20px;
+            position: relative;
 
-.resumeContainer p{
-    font-size: 12px;
-    text-align: left;
-}
-.resumeContainer li { 
-text-decoration: none;
-list-style: none;
-}
-.containerRight{
-    display: flex ;
-    flex-direction: column;
-    width: 50%;
-    padding-right: 10px;
-    height:100%;
-}
-.containerName{
-    display: flex;
-    width: 100%;
-    border-bottom: 10px solid rgb(55,55,55);
-    text-align: left;
-}
-.SummaryContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 100%;
-    margin-top: -10px;
-}
-.SummaryContainer h3{ 
-   
-    margin-bottom: -5px;
-}
-.SummaryContaine h3{
-    text-align: left;
-}
-.WorkExperienceContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    text-align: left;
-    width: 100%;
-}
-.WorkExperienceContainer p{
-    font-size: 10px;
-}
-.WorkExperienceContainer ul li{
-    margin-top: -10px;
-    list-style:disc;
-    padding-bottom:2px;
-}
-.WorkExperienceContainer li{
-    margin-bottom: -25px;
-}
-.titleContainer{
-    margin-bottom: -5px;
-    margin-top: -20px;
-}
-.titleContainer h3 {
-margin-bottom: -1px;
-}
-.titleContainer h4 {
-    margin-bottom: -1px;
-    margin-top: 5px;
-    }
-.titleContainer span{
-    font-size: 10px;
-    margin-top: -1px;
-    margin-bottom: 5px;
-}
-.languageContainer{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-top: auto;
-}
-.languageContainer ul {
-    margin-top: -5px;
-}
-.containerLeft{
-    width: 50%;
-    background-color: #fff6e9;
-    padding: 10px;
-    display: flex;
-    flex-direction: column; 
-    position: absolute;
-    left: 450px;
-    top: -10px;
-}
-.contactContainer{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-top: 35px;
-    margin-bottom: 10px;
-    
-}
-.contactContainer p{
-    text-align: left;
-    margin-bottom: -15px;
+        }
 
-}
-.skillsContainer{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-bottom: 20px;
-}
-.skillsContainer h3{
-    margin-bottom: -20px;
-}
-.skillsContainer p{
-    text-align: left;
-    margin-bottom: -15px;
-}
-.ProfessionalContainer{
-    display: flex;
-    flex-direction: column;
-}
-.ProfessionalContainer h4{
-margin-bottom: -10px;
-}
-.TechnicalContainer{
-    display: flex;
-    flex-direction: column;
-}
-.TechnicalContainer h4{
-    margin-bottom: -10px;
-}
-.educationContainer{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-bottom: 0;
-}
-.educationContainer h3{
-    margin-bottom: -10px;
-}
-.educationContainer h4{
-    margin-bottom: -10px;
-}
+        .resumeContainer p {
+            font-size: 14px;
+            text-align: left;
+        }
 
+        .resumeContainer li {
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .containerRight {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding-right: 10px;
+            height: 100%;
+        }
+
+        .containerName {
+            display: flex;
+            width: 100%;
+            border-bottom: 10px solid rgb(55, 55, 55);
+            text-align: left;
+        }
+
+        .SummaryContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            width: 100%;
+            /* margin-top: -10px; */
+        }
+
+        .SummaryContainer h3 {
+
+            /* margin-bottom: -5px; */
+        }
+
+        .SummaryContaine h3 {
+            text-align: left;
+        }
+
+        .WorkExperienceContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            text-align: left;
+            width: 100%;
+        }
+
+        .WorkExperienceContainer p {
+            font-size: 14px;
+        }
+
+        .WorkExperienceContainer ul li {
+            /* margin-top: -10px; */
+            list-style: disc;
+            padding-bottom: 2px;
+        }
+
+        .WorkExperienceContainer li {
+            /* margin-bottom: -25px; */
+        }
+
+        .titleContainer {
+            /* margin-bottom: -5px; */
+            /* margin-top: -20px; */
+        }
+
+        .titleContainer h3 {
+            /* margin-bottom: -1px; */
+        }
+
+        .titleContainer h4 {
+            /* margin-bottom: -1px;
+            margin-top: 5px; */
+        }
+
+        .titleContainer span {
+            font-size: 10px;
+            /* margin-top: -1px;
+            margin-bottom: 5px; */
+        }
+
+        .languageContainer {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            /* margin-top: auto; */
+        }
+
+        .languageContainer ul {
+            /* margin-top: -5px; */
+        }
+
+        .containerLeft {
+            width: 50%;
+            background-color: #fff6e9;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 450px;
+            top: -10px;
+        }
+
+        .contactContainer {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 35px;
+            margin-bottom: 10px;
+
+        }
+
+        .contactContainer p {
+            text-align: left;
+            margin-bottom: -15px;
+
+        }
+
+        .skillsContainer {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .skillsContainer h3 {
+            /* margin-bottom: -20px; */
+        }
+
+        .skillsContainer p {
+            text-align: left;
+            /* margin-bottom: -15px; */
+        }
+
+        .ProfessionalContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ProfessionalContainer h4 {
+            /* margin-bottom: -10px; */
+        }
+
+        .TechnicalContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .TechnicalContainer h4 {
+            /* margin-bottom: -10px; */
+        }
+
+        .educationContainer {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .educationContainer h3 {
+            /* margin-bottom: -10px; */
+        }
+
+        .educationContainer h4 {
+            /* margin-bottom: -10px; */
+        }
     </style>
 
 
 </head>
+
 <body>
     <div class="resumeContainer">
         <div class="containerRight">
-            <div class="containerName" >
+            <div class="containerName">
                 <h2>{{form.firstName}} {{form.lastName }}</h2>
             </div>
-            
+
             <div class="SummaryContainer">
                 <h3>Professional Summary</h3>
                 <p>
@@ -180,66 +210,21 @@ margin-bottom: -10px;
                     <h3>Work Experience</h3>
                     <h4>Job Position Title</h4>
                     <h6>{{form.JobTitle}}</h6>
-                    <span>Company, MOnth/Year</span>
-                </div> 
-                
-                <ul>
-                    <li>
-                        <p>
-                        Add one sentence descriptions of main job accomplishments or
-                        accountabilities -no more than 5 per role.
-                        </p>
-                    </li>
-                    
-                    <li>
-                        <p>
-                        In each, highlight 1-2 relevant skilis/capabilities you used to achieve
-                        those accomplishments and what the resuit or impact was. Try to
-                        ensure a number/frequency in most statements and quantify the
-                        impact wherever possible.
-                        </p>
-
-                    </li>
-
-                    <li>
-                        <p>
-                        Ex: As an experienced sales manager, I motivated a diverse team
-                        through positive reinforcement and ongoing communication/feedback
-                        to increase our quarter over quarter sales results by 150%.
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                        Ex: As an effective communicator, I developed and delivered monthly
-                        strategy presentations, aligning over 20 national teams to our annual
-                        goals.
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                        Ex: As a server, I delivered exceptional customer experiences and was
-                        consistently rated 9/10 by customers who filled in our restaurant
-                        survey.
-                        </p>
-                    </li>
-                </ul>
+                </div>
             </div>
-           
+
 
             <div class="languageContainer">
                 <h3>Language</h3>
-
-                        <p>{{form.language}}</p>
+                <p>{{form.language}}</p>
             </div>
 
-            
+
         </div>
 
         <div class="containerLeft">
             <div class="contactContainer">
-                <h3 >Contact</h3>
+                <h3>Contact</h3>
                 <div>
                     <p>{{form.Phone}}</p>
                     <p>{{form.Mail}}</p>
@@ -248,20 +233,14 @@ margin-bottom: -10px;
                 </div>
             </div>
             <div class="skillsContainer">
-                <h3 >Skills</h3>
-                <h5 >{{form.skills}}</h5>
+                <h3>Skills</h3>
+                <h5>{{form.skills}}</h5>
 
                 <div class="skillsItemContainer">
                     <div class="ProfessionalContainer">
-                        <h4 > Professional History </h4>
-                <h5 >{{form.employmentHistory}}</h5>
-                        
-                    </div>
-                    <div class="TechnicalContainer">
-                        <h4 > Technical </h4>
-                        <p>Microsoft Office</p>
-                        <p>Adobe creative Suite</p>
-                        <p>Html</p>
+                        <h4> Professional History </h4>
+                        <h5>{{form.employmentHistory}}</h5>
+
                     </div>
                 </div>
 
@@ -270,31 +249,9 @@ margin-bottom: -10px;
             <div class="educationContainer">
                 <h3> Education</h3>
                 <h5> {{form.education}}</h5>
-
-                <!-- <div class="educationItemContainer">
-                    <div class="bloc">
-                        <h4 >Enter Degree/Diploma Here (e.g.
-                            BA) in (Subject) </h4>
-
-                        <p>University, City, Province,</p>
-                        <span> <p>Month/Year - Month/Year </p></span>
-                        <p>Any additional details, e.g. Dean's
-                            List, Scholarship Awards</p> 
-                    </div>
-
-                    <div class="bloc">
-                        <h4 >Enter Degree/Diploma Here (e.g.
-                            BA) in (Subject) </h4>
-
-                        <p>University, City, Province,</p>
-                        <span> <p>Month/Year - Month/Year </p></span>
-                        <p>Any additional details, e.g. Dean's
-                            List, Scholarship Awards</p>
-                    </div>
-                </div> -->
-
             </div>
 
         </div>
 </body>
+
 </html>
